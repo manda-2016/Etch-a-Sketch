@@ -1,0 +1,19 @@
+#boxContainer {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 50px;
+    width: 900px;
+}
+
+#boxes {
+    border: solid red;
+    padding: 10px;
+    height: 33px;
+    width: 33px;
+}
+
+#title {
+
+    border:  solid red;
+}
