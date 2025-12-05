@@ -6,6 +6,8 @@ function createGrid(userInput) {
   //clears out grid
   element.innerHTML = "";
     
+//makes all boxes same size dependent upon user input
+  const boxSize = 500 /userInput; 
   for (let i = 0; i < userInput * userInput; i++) {
     console.log("box count");
     const squareDiv = document.createElement ("div");
@@ -13,6 +15,9 @@ function createGrid(userInput) {
     squareDiv.appendChild(newContent);
     squareDiv.id = "boxes";
     element.appendChild(squareDiv);
+
+    squareDiv.style.width = `${boxSize}`;
+    squareDiv.style.height = `${boxSize}`;
 
 //allows change color on hover
   squareDiv.addEventListener ("mouseenter", (event) => {

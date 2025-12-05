@@ -1,16 +1,26 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 #boxContainer {
     display:flex;
+    flex: none;
     flex-wrap: wrap;
-    justify-content: center;
-    height: 50px;
-    width: 900px;
+    justify-content: space-around;
+    align-items: center;
+    height: 960x;
+    width: 960px;
 }
 
 #boxes {
     border: solid red;
-    padding: 10px;
-    height: 33px;
-    width: 33px;
+    padding: 0px;
+    height: 30px;
+    width: 30px;
 }
 
 #title {
