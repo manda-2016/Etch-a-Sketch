@@ -1,49 +1,55 @@
 //creates divs
-for (i = 0 ; i < 256; i++){
+
+function createGrid(userInput) {
+
+  const element = document.getElementById("boxContainer");
+  //clears out grid
+  element.innerHTML = "";
+    
+  for (let i = 0; i < userInput * userInput; i++) {
+    console.log("box count");
     const squareDiv = document.createElement ("div");
     const newContent = document.createTextNode("");
     squareDiv.appendChild(newContent);
     squareDiv.id = "boxes";
-    const element = document.getElementById("boxContainer");
     element.appendChild(squareDiv);
 
-
-
-    squareDiv.addEventListener ("mouseenter", (event) => {
-    event.target.style.backgroundColor = "orange";
-    //setTimeout (() => {
-        //event.target.style.backgroundColor = "";
-    //}, 5000);
-})};
-
-//creates button to change grid size
-function popupButton () {
-    console.log("hello");
-    const popButton = document.createElement ("BUTTON");
-    const text = document.createTextNode ("Change Grid Size");
-    popButton.appendChild(text);
-    const element = document.getElementById("promptButton");
-    element.appendChild(popButton);
-
-
-    popButton.addEventListener("click", (event) => {
-        let userInput = prompt ("Please enter a number between 1 and 100 to change the grid size");
-    });
-    //let i = 0;
-    //let i = userInput;
+//allows change color on hover
+  squareDiv.addEventListener ("mouseenter", (event) => {
+  event.target.style.backgroundColor = "orange";
+  console.log("hello");
+  }
+)
+  }
+  
+}
+   //creates standard grid
+  createGrid(16)
     
+  
+    const popButton = document.getElementById("promptButton");
 
-    //if (userInput > 100 || userInput < 1) {
-        //alert ("Invalid entry. Please enter a number between 1 and 100")
-    //} else {
+    console.log(popButton);
+//creates button
+    popButton.addEventListener("click", () => {
+      console.log("is button working?")
+        let userInput = prompt ("Please enter a number between 1 and 100 to change the grid size");
+        if ( userInput > 100 || userInput < 1 || isNaN(userInput)){
+        userInput = prompt ("Please enter a number between 1 and 100 to change the grid size");
+        } else {
+          console.log("creating grid")
 
-    //}
+          createGrid(userInput)
+        }
+       
+      
+ 
+});
 
-};
 
-popupButton()
+  
 
 //const title =document.createElement("h1");
 //title.id= "title";
 //title.textContent= "Etch-A-Sketch";
-//title.style.border = "2px solid red";
+//title.style.border = "2px solid red";}
