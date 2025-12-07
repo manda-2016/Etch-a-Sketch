@@ -1,26 +1,24 @@
 body {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    align-items:first baseline;
+    justify-content:center;
+    
+
 }
 
 #boxContainer {
     display:flex;
-    flex: none;
     flex-wrap: wrap;
-    justify-content: space-around;
     align-items: center;
-    height: 960x;
-    width: 960px;
+    height: 700px;
+    width: 700px;
+    border: solid red;
+
 }
 
 #boxes {
-    border: solid red;
-    padding: 0px;
-    height: 30px;
-    width: 30px;
+    /*border: solid black;*/
+    box-sizing: border-box;
 }
 
 #title {
