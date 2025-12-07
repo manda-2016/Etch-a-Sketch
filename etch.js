@@ -6,8 +6,8 @@ function createGrid(userInput) {
   //clears out grid
   element.innerHTML = "";
     
-//makes all boxes same size dependent upon user input
-  const boxSize = 500 /userInput; 
+  
+  
   for (let i = 0; i < userInput * userInput; i++) {
     console.log("box count");
     const squareDiv = document.createElement ("div");
@@ -16,19 +16,30 @@ function createGrid(userInput) {
     squareDiv.id = "boxes";
     element.appendChild(squareDiv);
 
-    squareDiv.style.width = `${boxSize}`;
-    squareDiv.style.height = `${boxSize}`;
+    //returns the inner width of the box container in pixels    
+    const size = boxContainer.clientWidth;
+    const cellSize = size / userInput; 
+    //makes all boxes same size dependent upon user input
+    squareDiv.style.width = squareDiv.style.height = cellSize + 'px';
 
+    //calculates random color for rainbow
+    function rainbow() {
+    console.log("color generator")
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return`rgb(${r},${g}, ${b})`;
+    }
 //allows change color on hover
   squareDiv.addEventListener ("mouseenter", (event) => {
-  event.target.style.backgroundColor = "orange";
+  event.target.style.backgroundColor = rainbow();
   console.log("hello");
   }
 )
   }
   
 }
-   //creates standard grid
+  //creates standard grid upon page loading
   createGrid(16)
     
   
@@ -53,8 +64,3 @@ function createGrid(userInput) {
 
 
   
-
-//const title =document.createElement("h1");
-//title.id= "title";
-//title.textContent= "Etch-A-Sketch";
-//title.style.border = "2px solid red";}
